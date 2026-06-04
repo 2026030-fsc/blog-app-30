@@ -1,3 +1,34 @@
-header {
+.spring {
+    text-decoration: none;
+    color: black;
+}
 
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    border-bottom: 2px solid #999;
+}
+
+.post {
+    text-decoration: none;
+    color: black;
+}
+
+li {
+    list-style: none;
+}
+
+.card-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;    
+}
+
+.card-grid .card {
+    flex: 1 1 200px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
