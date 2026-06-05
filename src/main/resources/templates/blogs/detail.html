@@ -5,12 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/style.css">
-    <title>新規投稿</title>
+    <title>詳細ページ</title>
 </head>
 
 <body>
     <header>
-        <a href="/blogs" class="spring"><h1>Spring</h1></a>
+        <a href="/blogs" class="spring">
+            <h1>Spring</h1>
+        </a>
         <input type="text" placeholder="キーワード検索" name="searchForm">
         <a href="/blogs/newPost" class="post">投稿</a>
     </header>
@@ -22,13 +24,8 @@
         </ul>
     </nav>
 
-    <label for="postTitle">タイトル</label><br>
-    <input type="text" name="titleForm"><br>
-
-     <label for="postText">本文</label><br>
-    <input type="text" name="MainTextForm"><br>
-    <input type="button" value="保存">
-
+    <h2 th:text="${blogs.title}"></h2>
+    <p th:text="${blogs.texts}"></p>
 </body>
 
 </html>

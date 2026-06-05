@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="ja" xmlns:th="http://www.thymeleaf.org">
 
 <head>
     <meta charset="UTF-8">
@@ -9,12 +9,14 @@
 </head>
 
 <body>
-   <header>
-        <a href="/blogs" class="spring"><h1>Spring</h1></a>
+    <header>
+        <a href="/blogs" class="spring">
+            <h1>Spring</h1>
+        </a>
         <input type="text" placeholder="キーワード検索" name="searchForm">
         <a href="/blogs/newPost" class="post">投稿</a>
     </header>
-    
+
     <nav>
         <ul>
             <li>ホーム</li>
@@ -23,20 +25,26 @@
     </nav>
 
     <div class="card-grid">
-        <div class="card">
-            <h3>Blog1</h3>
-            <p>本文</p>
+        <div class="card" th:each="blog : ${blogs}">
+            <a th:href="@{/blogs/{id}(id = ${blog.id})}" class="blogJump">
+                <h3 th:text="${blog.title}">Blog</h3>
+                <p th:text="${blog.texts}">本文</p>
+            </a>
+        </div>
+
+        <!-- <div class="card">
+            <a href="/blogs/detail">
+                <h3>Blog2</h3>
+                <p>本文</p>
+            </a>
         </div>
 
         <div class="card">
-            <h3>Blog2</h3>
-            <p>本文</p>
-        </div>
-
-        <div class="card">
-            <h3>Blog3</h3>
-            <p>本文</p>
-        </div>
+            <a href="/blogs/detail">
+                <h3>Blog3</h3>
+                <p>本文</p>
+            </a>
+        </div> -->
     </div>
 
 </body>
