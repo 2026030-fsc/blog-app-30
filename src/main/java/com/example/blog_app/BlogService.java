@@ -20,5 +20,8 @@ public class BlogService {
         return blogRepository.findById(id);
     }
 
-    
+    public void save(BlogForm form) {
+        Blog blog = new Blog(null, form.getTitle(), form.getTexts());
+        blogRepository.save(blog);
+    }
 }

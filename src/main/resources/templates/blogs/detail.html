@@ -19,13 +19,13 @@
 
     <nav>
         <ul>
-            <li>ホーム</li>
+            <a href="/blogs" class="home"><li>ホーム</li></a>
             <li>プロフィール</li>
         </ul>
     </nav>
 
-    <h2 th:text="${blogs.title}"></h2>
-    <p th:text="${blogs.texts}"></p>
+    <h2 th:text="${blogs.title}">ブログタイトル</h2>
+    <p th:text="${blogs.texts}">本文</p>
 </body>
 
 </html>

@@ -10,24 +10,28 @@
 
 <body>
     <header>
-        <a href="/blogs" class="spring"><h1>Spring</h1></a>
+        <a href="/blogs" class="spring">
+            <h1>Spring</h1>
+        </a>
         <input type="text" placeholder="キーワード検索" name="searchForm">
         <a href="/blogs/newPost" class="post">投稿</a>
     </header>
 
     <nav>
         <ul>
-            <li>ホーム</li>
+            <a href="/blogs" class="home">
+                <li>ホーム</li>
+            </a>
             <li>プロフィール</li>
         </ul>
     </nav>
-
-    <label for="postTitle">タイトル</label><br>
-    <input type="text" name="titleForm"><br>
-
-     <label for="postText">本文</label><br>
-    <input type="text" name="MainTextForm"><br>
-    <input type="button" value="保存">
+    <form action="/blogs" method="post">
+        <label for="postTitle">タイトル</label><br>
+        <input type="text" name="title"><br>
+        <label for="postText">本文</label><br>
+        <input type="text" name="texts"><br>
+        <input type="submit" value="保存">
+    </form>
 
 </body>
 

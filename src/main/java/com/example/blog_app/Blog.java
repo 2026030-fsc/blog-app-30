@@ -1,13 +1,14 @@
 package com.example.blog_app;
 
+// Blogクラス
 public class Blog {
     private final Long id;
     private final String title;
     private final String texts;
-
+    
     public Blog(Long id, String title, String texts) {
         this.id = id;
-        this.title = title;
+        this.title= title;
         this.texts = texts;
     }
 

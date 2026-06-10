@@ -4,12 +4,10 @@ import java.util.List;
 import java.util.Optional;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestParam;
-
 
 @Controller
 public class BlogController {
@@ -29,10 +27,11 @@ public class BlogController {
     }
 
     @GetMapping("/blogs/newPost")
-    public String newPost() {
+    public String newPost(@ModelAttribute BlogForm blogForm) {
         return "blogs/newPost";
     }
 
+    // 詳細ページへの移動
     @GetMapping("/blogs/{id}")
     public String detail(@PathVariable Long id, Model model) {
         Optional<Blog> blogOpt = blogService.findById(id);
@@ -44,10 +43,15 @@ public class BlogController {
     }
 
     @PostMapping("/blogs")
-    public String create(@RequestParam String title, String texts, Model model) {
-        model.addAttribute("title", title);
-        model.addAttribute("texts", texts);
-        return "registered";
+    public String create(@ModelAttribute BlogForm form, Model model) {
+        model.addAttribute("title", form.getTitle());
+        model.addAttribute("texts", form.getTexts());
+        blogService.save(form);
+        return "redirect:/blogs/registered"; //GetMapping
     }
-    
+
+    @GetMapping("/blogs/registered")
+    public String registerd() {
+        return "blogs/registerd"; // ファイルを返す
+    }
 }

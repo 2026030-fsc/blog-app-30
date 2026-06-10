@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ja xmlns:th=http://www,thymeleaf.org">
+<html lang="ja xmlns:th=http://www.thymeleaf.org">
 
 <head>
     <meta charset="UTF-8">
@@ -19,13 +19,14 @@
 
     <nav>
         <ul>
-            <li>ホーム</li>
+            <a href="/blogs" class="home"><li>ホーム</li></a>
             <li>プロフィール</li>
         </ul>
     </nav>
 
     <h1>投稿完了</h1>
-    <p>「<span th:text="${title}">ブログタイトル</span>」を投稿しました。</p>
+    <p>投稿が完了しました。</p>
+    <!-- <p>「<span th:text="${title}">ブログタイトル</span>」を投稿しました。</p> -->
 </body>
 
 </html>
