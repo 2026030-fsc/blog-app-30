@@ -35,4 +35,11 @@ public class BlogRepository {
         .param("texts", blog.getTexts())
         .update(); // 取り出すときは表のままで返ってくるが、今回は単語なのでlistじゃない
     }
-}
+
+    //削除機能
+    public void delete(Long id) {
+        jdbcClient.sql("DELETE  FROM blogs WHERE id = :id")
+        .param("id", id)
+        .update();
+        }
+    }

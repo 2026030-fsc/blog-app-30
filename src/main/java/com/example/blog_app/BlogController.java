@@ -54,4 +54,11 @@ public class BlogController {
     public String registerd() {
         return "blogs/registerd"; // ファイルを返す
     }
+
+    // @PostMapping("/blogs/{id}")
+    // public String delete(@PathVariable long id) {
+        // blogService.delete(id);     
+        // return "redirect:/blog";
+    // }
+    
 }

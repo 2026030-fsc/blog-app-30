@@ -5,13 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/style.css">
-    <title>詳細ページ</title>
+    <title>投稿詳細｜Spring Blogs</title>
 </head>
 
 <body>
     <header>
         <a href="/blogs" class="spring">
-            <h1>Spring</h1>
+            <h1>Spring Blogs</h1>
         </a>
         <input type="text" placeholder="キーワード検索" name="searchForm">
         <a href="/blogs/newPost" class="post">投稿</a>
@@ -19,13 +19,18 @@
 
     <nav>
         <ul>
-            <a href="/blogs" class="home"><li>ホーム</li></a>
+            <a href="/blogs" class="home">
+                <li>ホーム</li>
+            </a>
             <li>プロフィール</li>
         </ul>
     </nav>
 
-    <h2 th:text="${blogs.title}">ブログタイトル</h2>
-    <p th:text="${blogs.texts}">本文</p>
+        <h2 th:text="${blogs.title}">ブログタイトル</h2>
+        <p th:text="${blogs.texts}">本文</p>
+        <!-- <form th:action="@{/blogs/{id}(id=${blog.id})}" method="post"> -->
+       <!-- <input type="submit" value="削除"> -->
+        <!-- </form> -->
 </body>
 
 </html>

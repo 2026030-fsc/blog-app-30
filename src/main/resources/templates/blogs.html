@@ -5,47 +5,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/style.css">
-    <title>spring</title>
+    <title>ホーム｜Spring Blogs</title>
 </head>
 
 <body>
     <header>
         <a href="/blogs" class="spring">
-            <h1>Spring</h1>
+            <h1>Spring Blogs</h1>
         </a>
         <input type="text" placeholder="キーワード検索" name="searchForm">
         <a href="/blogs/newPost" class="post">投稿</a>
     </header>
 
-    <nav>
-        <ul>
-            <a href="/blogs" class="home"><li>ホーム</li></a>
-            <li>プロフィール</li>
-        </ul>
-    </nav>
+        <nav>
+            <ul>
+                <a href="/blogs" class="home">
+                    <li>ホーム</li>
+                </a>
+                <li>プロフィール</li>
+            </ul>
+        </nav>
 
-    <div class="card-grid">
-        <div class="card" th:each="blog : ${blogs}">
-            <a th:href="@{/blogs/{id}(id = ${blog.id})}" class="blogJump">
-                <h3 th:text="${blog.title}">Blog</h3>
-                <p th:text="${blog.texts}">本文</p>
-            </a>
+        <div class="card-grid">
+            <div class="card" th:each="blog : ${blogs}">
+                <a th:href="@{/blogs/{id}(id = ${blog.id})}" class="blogJump">
+                    <h3 th:text="${blog.title}">Blog</h3>
+                    <p th:text="${blog.texts}">本文</p>
+                </a>
+            </div>
         </div>
-
-        <!-- <div class="card">
-            <a href="/blogs/detail">
-                <h3>Blog2</h3>
-                <p>本文</p>
-            </a>
-        </div>
-
-        <div class="card">
-            <a href="/blogs/detail">
-                <h3>Blog3</h3>
-                <p>本文</p>
-            </a>
-        </div> -->
-    </div>
 
 </body>
 

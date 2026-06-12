@@ -24,4 +24,8 @@ public class BlogService {
         Blog blog = new Blog(null, form.getTitle(), form.getTexts());
         blogRepository.save(blog);
     }
+
+    public void delete(Long id) {
+        blogRepository.delete(id);
+    }
 }

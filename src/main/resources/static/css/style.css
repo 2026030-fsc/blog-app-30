@@ -26,12 +26,13 @@ li {
 
 .card-grid {
     display: flex;
+    justify-content: center;
     flex-wrap: wrap;
     gap: 20px;    
 }
 
 .card-grid .card {
-    flex: 1 1 200px;
+    width: 1000px;
     background-color: white;
     padding: 20px;
     border-radius: 8px;
@@ -42,3 +43,4 @@ li {
     text-decoration: none;
     color: black;
 }
+
